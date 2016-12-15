@@ -16,13 +16,13 @@
 
 ### Source code structure
 
-raytracer.h/cpp
+`raytracer.h/cpp`  
 Contains the main raytracing loop. Has much of the starter code.
 When my raytracer first started working I wanted to make it faster.
 It turns out the matrix multiplication for the tree traversal was
 a huge unnecessary bottleneck. So I precomputed the transformations.
 
-material.h/cpp
+`material.h/cpp`  
 Has various classes describing how to shade different materials.
 Since raytracing shading techniques involve sending more rays,
 some of that ray tracing logic can be found in the appropriate
@@ -32,7 +32,7 @@ intersection to test shadows. It takes care of all the shading
 because OO programming design worked out best for having
 different types of materials to be shaded.
 
-light_source.h/cpp
+`light_source.h/cpp`  
 Light sources are no longer the single point of truth as to how
 to shade things any more in my structure. They follow a simple
 rule: every intersection wanting to be shaded will call on light
@@ -40,7 +40,7 @@ sources to sample light points on which to do single point Phong
 shading with. This model easily captures most lights this current
 raytracing framework might want to render.
 
-sampler.h/cpp
+`sampler.h/cpp`  
 This module came very late but became very handy in generating
 values for distributed ray tracing. It has an interface like
 OpenGL's where you first call the begin function and then call
@@ -49,17 +49,17 @@ and the class remembers what you need from it each next time.
 The sampling for each set is meant to approximate a uniform
 distribution over the Euclidean measure as efficiently as possible.
 
-scene_object.h/cpp
+`scene_object.h/cpp`  
 The object intersection stuff. Fairly straightforward calculation
 logic. To optimize speed, I arranged some geometry calculations
 in the code to minimize unnecessary work.
 
-the_scene.h/cpp
+`the_scene.h/cpp`  
 The place where the scene is set up. Not really super proper code,
 but in lieu of an actual UI this "programming interface" is good
 enough to get things working fairly easily.
 
-util.h/cpp
+`util.h/cpp`  
 Ah yes, the utility file, where everyone puts stuff that don't
 quite deserve their own file. I realized how primitive the vector
 stuff of the starter code was, so I made every kind of small data
