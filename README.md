@@ -1,5 +1,5 @@
 ![](demo/dabest.bmp)
-## Raytracer – computer graphics course final project
+## Raytracer – computer graphics course final project (2016 spring)
 
 Open the `raytracer.sln` file with an up to date version of Microsoft Visual Studio (with C++) and build and run.  
 The default demo settings will give you this render:
