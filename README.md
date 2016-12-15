@@ -1,18 +1,29 @@
-#### Functionality
+![](demo/dabest.bmp)
+## Raytracer – computer graphics course final project
+
+Open the `raytracer.sln` file with an up to date version of Microsoft Visual Studio (with C++) and build and run.  
+The default demo settings will give you this render:
+
+> ![](demo/default.bmp)
+
+in a file `view1.bmp` in the executing directory. If you want the full HD render at the top, change the settings in `the_scene.cpp` to
+```
+TheScene::TheScene() :
+screen_width(1920),
+screen_height(1080),
+fov(75),
+aa_pixel(4), // points per side on pixel to sample for anti aliasing
+ray_hp(17) // ray "hit points", i.e. recursion depth control
+```
+Beware it will take many hours if you do this. A line will be printed on the console for every one in a few horizontal single pixel lines that have completed rendering.
+
+### Functionality
 - draws cylinders
 - glossy reflection
 - extended light sources
 - texture mapping
   (demo is procedural, but the code easily generalizes to texture)
 - fast as hell (demo took on the order of minutes)
-
-#### External resources
-- StackOverflow
-  ran into lots and lots of C++ core language questions,
-  like references, lvalue/rvalue semantics, constructors, virtuality
-- websites on drawing fractals
-  to whom I owe the continuous escape parameter formula
-
 
 ### Source code structure
 
