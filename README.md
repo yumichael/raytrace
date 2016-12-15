@@ -18,20 +18,16 @@ ray_hp(17) // ray "hit points", i.e. recursion depth control
 Beware it will take many hours if you do this. A line will be printed on the console for every one in a few horizontal single pixel lines that have completed rendering.
 
 ### Functionality
-- draws cylinders
-- glossy reflection
-- extended light sources
+- draws flat surfaces and cylinders
+- mirror and glossy reflection
+- area and volume light sources
 - texture mapping
   (demo is procedural, but the code easily generalizes to texture)
-- fast as hell (demo took on the order of minutes)
-
+  
 ### Source code structure
 
 `raytracer.h/cpp`  
-Contains the main raytracing loop. Has much of the starter code.
-When my raytracer first started working I wanted to make it faster.
-It turns out the matrix multiplication for the tree traversal was
-a huge unnecessary bottleneck. So I precomputed the transformations.
+Contains the main raytracing loop. Controls the originating rendering logic.
 
 `material.h/cpp`  
 Has various classes describing how to shade different materials.
@@ -44,8 +40,7 @@ because OO programming design worked out best for having
 different types of materials to be shaded.
 
 `light_source.h/cpp`  
-Light sources are no longer the single point of truth as to how
-to shade things any more in my structure. They follow a simple
+Light sources follow a simple
 rule: every intersection wanting to be shaded will call on light
 sources to sample light points on which to do single point Phong
 shading with. This model easily captures most lights this current
