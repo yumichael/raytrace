@@ -50,8 +50,7 @@ fov(75),
 aa_pixel(2), // points per side on pixel to sample for anti aliasing
 ray_hp(2) // ray "hit points", i.e. recursion depth control
 
-// the current settings above lets the scene render in about 20 minutes on my computer
-// but my computer is pretty fast though
+// the current settings above lets the scene render in a few seconds on Release settings
 {
 	configure_rendering();
 	add_views();
