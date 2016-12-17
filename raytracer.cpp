@@ -225,7 +225,7 @@ int main(int argc, char* argv[])
 
 	raytracer.buildMatrices();
 
-	std::ofstream mylog("MYlog.txt");
+	std::ofstream timingLog("timing_log.txt");
 
 	// Render the scene, feel free to make the image smaller for
 	// testing purposes.
@@ -233,18 +233,18 @@ int main(int argc, char* argv[])
 	time0 = clock();
 	scene.take(1);
 	time1 = clock();
-	mylog << time0 << " -- " << time1 << " : " << time1-time0 << std::endl;
+	timingLog << time0 << " -- " << time1 << " : " << time1-time0 << std::endl;
 
 	// Render it from a different point of view.
 	time0 = clock();
 	scene.take(2);
 	time1 = clock();
-	mylog << time0 << " -- " << time1 << " : " << time1-time0 << std::endl;
+	timingLog << time0 << " -- " << time1 << " : " << time1-time0 << std::endl;
 
 	time0 = clock();
 	scene.take(3);
 	time1 = clock();
-	mylog << time0 << " -- " << time1 << " : " << time1 - time0 << std::endl;
+	timingLog << time0 << " -- " << time1 << " : " << time1 - time0 << std::endl;
 
 
 	return 0;
