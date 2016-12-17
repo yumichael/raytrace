@@ -187,7 +187,7 @@ struct Ray3D {
 	// Origin and direction of the ray.
 	Point3D origin;
 	Vector3D dir;
-	// Hit points, i.e. how many more tmies it can reflect/refract
+	// Hit points, i.e. how many more times it can reflect/refract
 	double hp;
 	// Intersection status, should be computed by the intersection
 	// function.
